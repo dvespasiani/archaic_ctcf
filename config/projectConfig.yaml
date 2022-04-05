@@ -1,0 +1,19 @@
+##----------------------------------------
+## interactive session arguments
+##----------------------------------------
+account: punim0586
+ntasks: 1
+threads: 2
+cpus_per_task: 2
+mem: 80000
+time: 10:00:00
+partition: mig
+
+##----------------------------------------
+## Project I/O dirs
+##----------------------------------------
+base_dir:  /data/projects/punim0586/dvespasiani/
+project_dir: /data/projects/punim0586/dvespasiani/archaic_ctcf/
+modules_configfile: /data/projects/punim0586/dvespasiani/archaic_ctcf/modules/modules.txt
+snps_dir: /data/projects/punim0586/dvespasiani/Archaic_introgression_in_PNG/Original_files
+
