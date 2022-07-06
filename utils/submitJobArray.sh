@@ -21,4 +21,13 @@ if [ "x$SLURM_JOB_ID" == "x" ]; then
 fi
 
 ## launch script
-/data/projects/punim0586/dvespasiani/archaic_ctcf/bin/runMotifbreak.sh
+source /usr/local/module/spartan_new.sh
+module load web_proxy
+module load gcc/8.3.0 openmpi/3.1.4
+module load r/4.0.0  
+
+## run the n line corresponding to the nth slurm job ID
+command=`head -n $SLURM_ARRAY_TASK_ID /data/projects/punim0586/dvespasiani/archaic_ctcf/code/motifbreak_jobArray.sh | tail -n 1`
+echo "SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
+echo $command
+eval $command

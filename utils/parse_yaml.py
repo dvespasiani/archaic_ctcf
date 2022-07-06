@@ -17,3 +17,4 @@ with open(config.yaml_file, 'r') as file:
 ## loop though items
 for k, v in yamlconfig.items():    
     print('export {}="{}"'.format(k,v))
+    

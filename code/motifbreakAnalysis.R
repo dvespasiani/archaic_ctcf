@@ -10,7 +10,6 @@ library(rtracklayer)
 library(MotifDb)
 library(BiocParallel)
 
-workers = multicoreWorkers()-1
 
 options(scipen=999)
 source('./utils/rUtils.R')
@@ -65,8 +64,7 @@ print('Searching for disrupted ctcf(l) motifs')
 motifbreak = function(file,pwmdb){
   y=motifbreakR(snpList =file, filterp = TRUE,
                 pwmList = pwmdb,threshold = 1e-5,
-                method = "log",bkg = c(A=0.3, C=0.2, G=0.2, T=0.3), ## use nt frequencies for non-coding regions human genome
-                BPPARAM = BiocParallel::MulticoreParam(workers=workers))%>%
+                method = "log",bkg = c(A=0.3, C=0.2, G=0.2, T=0.3))%>%
                 as.data.table()
 
   y$motifPos=vapply(y$motifPos, function(x) paste(x, collapse = ","), character(1L))

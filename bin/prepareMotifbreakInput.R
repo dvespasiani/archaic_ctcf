@@ -22,6 +22,6 @@ motifbreak_format <- copy(snps)[
 ]
 
 ## write files 
-outfile = paste0(project_dir,'data/','motifbreak_input.txt.gz',sep='')
+outfile = paste0(project_dir,'data/motifbreak_files/','motifbreak_input.txt.gz',sep='')
 fwrite(motifbreak_format, file = outfile,col.names = F, row.names = F, sep = "\t", quote = F)
 
